@@ -11,6 +11,9 @@ const TodoSchema = new Schema({
         type: Boolean,
         default: false
     },    
+    user: {
+      type: mongoose.ObjectId,
+    }
 }, {timestamps: true})
 
 const Todo = model("Todo", TodoSchema)

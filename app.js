@@ -2,7 +2,7 @@ import express from "express"
 import cors from "cors"
 import dotenv from "dotenv/config"
 import todoRouter from "./routes/todos.routes.js"
-
+import authRouter from "./routes/auth.routes.js"
 import connectToDB from "./config/db.config.js"
 
 connectToDB()
@@ -15,6 +15,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/todos', todoRouter)
+app.use('/auth',authRouter)
 
 app.listen(PORT, ()=> {
     console.log("Listening on PORT ",PORT)
