@@ -1,11 +1,13 @@
 import express from "express"
+import cors from "cors"
+import dotenv from 'dotenv/config'
+
 import connectToDB from "./config/db.config.js"
 import Todo from "./models/Todo.model.js"
-import cors from "cors"
 
 connectToDB()
 
-const PORT = 3003
+const PORT = process.env.EXPRESS_PORT || 3003
 
 const app = express()
 

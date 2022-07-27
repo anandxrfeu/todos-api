@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv/config'
 
-const DATABASE_URI = "mongodb://127.0.0.1:27017"
-const DATABSE_NAME = "todoApi"
+const DATABASE_URI = process.env.MONGO_URI
+const DATABSE_NAME = process.env.MONGO_DATABASE
 
 const connectToDB = async () => {
     const connection = await mongoose.connect(`${DATABASE_URI}/${DATABSE_NAME}`)
